@@ -12,6 +12,6 @@ Created and deployed fully responsive and mobile friendly webpage. Webpage provi
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(120).png)
 # Wordle Game
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(119).png)
-#Wordle Leader board (can see different users scores for that day)
+# Wordle Leader board (can see different users scores for that day)
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(118).png)
 
