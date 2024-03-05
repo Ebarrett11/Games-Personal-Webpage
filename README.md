@@ -14,7 +14,7 @@ Displays games that I've created.
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/m3.PNG)
 
 # Piano Game
-Play a piano with keys and cursor, playing a certain keys summons Cthulhu.
+Play a piano with keys and cursor, playing certain keys summons Cthulhu.
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(115).png)
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/m4.PNG)
 
