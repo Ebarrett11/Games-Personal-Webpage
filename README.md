@@ -5,8 +5,7 @@ Created using Flask, HTML, CSS, and JavaScript. The website is hosted on Google 
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(113).png)
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(114).png)
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(115).png)
-![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(116).png)
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(120).png)
-![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(117).png)
-![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(118).png)
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(119).png)
+![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(118).png)
+
