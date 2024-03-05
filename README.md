@@ -1,7 +1,7 @@
-*Not currently deployed, due to lapse in student account credits
-Created and deployed fully responsive and mobile friendly webpage. Webpage provides ability to log in, register, play games, and see real time scores from other players on a leaderboard.
+Fully responsive and mobile friendly webpage. Webpage provides ability to log in, register, play games, and see real time scores from other players on a leaderboard.
 Created using Flask, HTML, CSS, and JavaScript. The website is hosted on Google Cloud and uses MySQL for database management. 
-
+<br/>
+*Not currently deployed, due to lapse in student account credits
 # Home Page
 Displays information about me.
 ![](https://github.com/Ebarrett11/Gif_Hosting/blob/master/Screenshot%20(113).png)
