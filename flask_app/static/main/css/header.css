@@ -1,0 +1,20 @@
+body, header {
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Image takes up 10% of viewing height */
+header {
+  height: 10vh;
+  width: 100%;
+}
+
+/* Actual image */
+#headerImg {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}

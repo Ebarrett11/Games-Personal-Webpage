@@ -1,0 +1,96 @@
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{% block maincontent %}
+<!DOCTYPE html> 
+  <body onload="startGame()">
+    <main> 
+      <!-- Show Instructions the first time -->
+      {% if instructions == True %}  
+      <div id="instructions">
+        <button onclick="closeInstructions()" id="popUpButton">X</button>
+        <h1 class = "popUpText">How to play</h1>
+        <h2 class = "popUpText">This game plays similar to Wordle. The difference is that in this version, the length of the word can be different. If the word is 
+          8 letters long then you will have 8 tries to guess the word. You can guess a word using the on screen keyboard or your own keyboard. 
+          If it is a real word then it will be accepted. If the tile turns gray then that letter is not anywhere in the word, yellow means that letter 
+          is in the word just in the wrong location, and green means that it is the correct letter in the correct place. 
+        </h2>
+      </div>
+      {% endif %}
+
+      
+      <!-- Alerts such as Loading... -->
+      <div>
+        <p id="wordleAlerts">&nbsp;</h1>
+      </div>
+
+      <!-- Hidden at start, appears after game is over -->
+      <div id="leaderboard">
+        <h1 id="result" class="score_entry"></h1>
+        <h2 id="entry_0" class="score_entry"></h2>
+        <h2 id="entry_1" class="score_entry"></h2>
+        <h2 id="entry_2"class="score_entry"></h2>
+        <h2 id="entry_3" class="score_entry"></h2>
+        <h2 id="entry_4" class="score_entry"></h2>
+      </div>
+
+      <!-- Holds all of the content for the wordle page (tiles and keyboard) -->
+      <div id="wordleContainer">
+        <!-- Holds the tiles for the game -->
+        <div id="wordleContent">
+        </div>
+        <div id="keyboardContainer">
+          <!-- First row of keyboard -->
+          <div id="keyRowDiv">
+            <div onclick="keyClick('Q')" class="key">Q</div>
+            <div onclick="keyClick('W')" class="key">W</div>
+            <div onclick="keyClick('E')" class="key">E</div>
+            <div onclick="keyClick('R')" class="key">R</div>
+            <div onclick="keyClick('T')" class="key">T</div>
+            <div onclick="keyClick('Y')" class="key">Y</div>
+            <div onclick="keyClick('U')" class="key">U</div>
+            <div onclick="keyClick('I')" class="key">I</div>
+            <div onclick="keyClick('O')" class="key">O</div>
+            <div onclick="keyClick('P')" class="key">P</div>
+          </div>
+          
+          <!-- Second row of keyboard -->
+          <div id="keyRowDiv">
+            <div onclick="keyClick('A')" class="key">A</div>
+            <div onclick="keyClick('S')" class="key">S</div>
+            <div onclick="keyClick('D')" class="key">D</div>
+            <div onclick="keyClick('F')" class="key">F</div>
+            <div onclick="keyClick('G')" class="key">G</div>
+            <div onclick="keyClick('H')" class="key">H</div>
+            <div onclick="keyClick('J')" class="key">J</div>
+            <div onclick="keyClick('K')" class="key">K</div>
+            <div onclick="keyClick('L')" class="key">L</div>
+            <div onclick="keyClick('8')" class="key">←</div>
+          </div>
+
+          <!-- Third row of keyboard -->
+          <div id="keyRowDiv">
+            <div onclick="keyClick('Z')" class="key">Z</div>
+            <div onclick="keyClick('X')" class="key">X</div>
+            <div onclick="keyClick('C')" class="key">C</div>
+            <div onclick="keyClick('V')" class="key">V</div>
+            <div onclick="keyClick('B')" class="key">B</div>
+            <div onclick="keyClick('N')" class="key">N</div>
+            <div onclick="keyClick('M')" class="key">M</div>
+            <div onclick="keyClick('13')" class="key">↵</div>
+          </div>
+        </div>
+      </div>  
+    </main>  
+  </body>
+</html>
+
+
+<script src="static\wordle\wordle.js"></script>
+<script src="static\piano\js\hamburger.js"></script>
+
+{% endblock %}
+

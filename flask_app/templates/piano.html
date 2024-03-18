@@ -1,0 +1,48 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+<!-- text above the piano -->
+<div id="pageDesc">
+  <h3>"Behold piano great and old, it's master slumbers in far off cold, If you wish to see anew, call out to it - we see you."</h2>
+  <hr>
+  </div>
+  <!-- The monster image behind the actual piano -->
+  <div id="hiddenImg" alt="Monster in canyon" loading="lazy">  
+    <h1>I have awoken</h1>
+  </div>
+  <!-- Div for the whole piano -->
+  <div id="pianoContent">
+    <h1>The Great Old One</h1>
+    <!-- white keys -->
+      <div id="whiteContent">
+        <!-- numbers are the keycode equvilents EX: a=65 -->
+        <div class="whiteKeys" id="65"><p class = "whiteKeyText">A</p></div>
+        <div class="whiteKeys" id="83"><p class = "whiteKeyText">S</p></div>
+        <div class="whiteKeys" id="68"><p class = "whiteKeyText">D</p></div>
+        <div class="whiteKeys" id="70"><p class = "whiteKeyText">F</p></div>
+        <div class="whiteKeys" id="71"><p class = "whiteKeyText">G</p></div>
+        <div class="whiteKeys" id="72"><p class = "whiteKeyText">H</p></div>
+        <div class="whiteKeys" id="74"><p class = "whiteKeyText">J</p></div>
+        <div class="whiteKeys" id="75"><p class = "whiteKeyText">K</p></div>
+        <div class="whiteKeys" id="76"><p class = "whiteKeyText">L</p></div>
+        <div class="whiteKeys" id="186"><p class = "whiteKeyText">;</p></div>
+      </div>
+      <!-- black keys -->
+      <div id="blackContent">
+        <div class="blackKeys" id="87"><p class = "blackKeyText">W</p></div>
+        <div class="blackKeys" id="69"><p class = "blackKeyText">E</p></div>
+        <div class="blackKeys" id="hidden"><p class = "blackKeyText"></p></div>
+        <div class="blackKeys" id="84"><p class = "blackKeyText">T</p></div>
+        <div class="blackKeys" id="89"><p class = "blackKeyText">Y</p></div>
+        <div class="blackKeys" id="85"><p class = "blackKeyText">U</p></div>
+        <div class="blackKeys" id="hidden"><p class = "blackKeyText"></p></div>
+        <div class="blackKeys" id="79"><p class = "blackKeyText">O</p></div>
+        <div class="blackKeys"id="80"><p class = "blackKeyText">P</p></div>
+      </div>      
+  </div>   
+
+<script src="static\piano\js\hamburger.js"></script>
+<script src="static\piano\js\piano.js"></script>
+
+{% endblock %}

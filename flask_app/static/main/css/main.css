@@ -1,0 +1,445 @@
+:root {
+  --ivory: #bab8b3;
+  --pianoBackground: #261d33;
+  --grayShade: #808080;
+}
+
+main{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: auto;
+}
+
+/* Div that holds all the content for main */
+.mainContent {
+  padding: 5%;
+  width: 80vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "photo text"
+  "photo-lower text-lower"
+  "fact fact";
+  grid-gap: 3%; 
+  margin: auto;
+  position:relative;
+  
+}
+
+/* Div for upper biophoto */
+#photo{
+  grid-area: photo;
+}
+
+/* Div for lower biophoto */
+#photo-lower{
+  grid-area: photo-lower;
+}
+
+/* Common attributes between upper and lower biophoto */
+.bioPhotoDiv{
+  width: 40vw;
+  margin: auto;
+}
+
+/* Common attributes between biophotos */
+.bioPhoto{
+  border: .2em solid #000000;
+  width: 40vw;
+  height: 50vh;
+  object-fit:cover;
+
+}
+
+/* Div for the upper biography */
+#text{
+  grid-area: text;
+}
+
+/* Div for the lower biography */
+#text-lower{
+    grid-area: text-lower;
+}
+
+/* common attributes between upper and lower biography */
+.bioDiv{
+  text-align: justify;
+  height: 50vh;
+  width: 40vw;
+  overflow: scroll;
+}
+
+
+.bio{
+  font-size:calc(1em + 1vw);
+}
+
+/* Fact at bottom of page */
+#fact{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  grid-area: fact;
+}
+
+/* The text above photo and bio in projects page */
+#pageDesc{
+  margin: auto;
+  text-align: center;
+  width: 80vw;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* Begins piano specific styling */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* Div that holds the actual piano  */
+#pianoContent{
+  background-color: var(--pianoBackground);
+  padding: 4%;
+  height: 70vh;
+  width: 80vw;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+
+  /* Used for transition to reveal monster */
+  opacity: 1;
+  transition: opacity 2s; 
+}
+
+/* Javscript switches from pianoContent to this one */
+#pianoContent.fade{
+  padding: 4%;
+  height: 70vh;
+  width: 80vw;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+  opacity:0;
+}
+
+/* Div that holds white keys */
+#whiteContent{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: .4vw;  
+  height: 50vh;
+  width: 80vw;
+  position: absolute;
+  margin: auto;  
+}
+
+/* Class for each individual key */
+.whiteKeys{
+  position: relative;
+  background-color: var(--ivory);
+  height: inherit;
+  width: auto;
+  border: .5vw solid #000000;
+  border-radius: .5em;
+  color: #000000;
+  text-align: center;
+  align-items:center;
+  min-width: 3vw;
+}
+
+/* Class for the text on the keys (initially hidden) */
+.whiteKeyText {
+  font-size: 6vh;
+  margin-top: 36vh;
+  visibility: hidden;
+}
+
+/* Div that holds black keys */
+#blackContent{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: .4vw;  
+  height: 50vh;
+  width: 80vw;
+  position:relative;
+  margin: auto;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  z-index: 5;
+  margin-left: 4vw;
+  color: #ffffff;
+  text-align: center;
+
+
+}
+
+/* Class for each black key */
+.blackKeys{
+  position: relative;
+  background-color: #000000;
+  height: 60%;
+  width: 4vw;
+  border: .5vw solid #000000;
+  border-radius: .5em;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 6vw;
+}
+
+/* Text on the black keys initially hidden */
+.blackKeyText {
+  color: #ffffff;
+  font-size: 3.6vh;
+  margin-top: 22vh;
+  visibility: hidden;
+}
+
+/* Used for formatting the black keys over the white keys 
+some of the black keys can't be seen  */
+#hidden {
+  visibility: hidden;
+}
+
+
+/* Image is background for a div that is behind the piano */
+/* for centering absolute div: */
+/* https://stackoverflow.com/questions/1776915/how-can-i-center-an-absolutely-positioned-element-in-a-div */
+#hiddenImg {
+  background-image: url(https://gitlab.msu.edu/cse477-fall-2023/course-materials/-/raw/main/homework/Homework-1/flask_app/static/piano/images/texture.jpeg);
+  padding: 4%;
+  height: 70vh;
+  width: 80vw;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  position: absolute; 
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #ffffff;
+  z-index: -10; 
+  background-size: cover;
+  background-position: center center;
+} 
+
+
+
+
+/* Media put at bottom so less errors occur */
+@media only screen and (max-width: 650px){
+  /* Single column view */
+  .mainContent {
+    grid-template-columns: 1fr ;
+    grid-template-areas: 
+    "photo"
+    "text"
+    "photo-lower"
+    "text-lower"
+    "fact";
+  }
+
+  /* Bio text take up whole viewing area */
+  .mainContent .bioDiv{
+    height: auto;
+    width: 80vw;
+    margin-left: .2em;
+    overflow:visible;
+  }
+
+  /* Fix formatting on photos in mobile view */
+  .mainContent .bioPhotoDiv{
+    margin: 0;
+
+  }
+
+  /* Photos take up whole viewing area in mobile view */
+  .mainContent .bioPhotoDiv .bioPhoto {
+    width: 80vw;
+  }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* Begin login.html formatting */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* Div holding all of the input fields for log in and create */
+.inputDiv{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* input field for email and password */
+.loginInput{
+  width: 20%;
+  margin: auto;
+  height: 5vh;
+}
+
+/* Button to create or log in  */
+.loginButton{
+  width: 20%;
+  margin: auto;
+  min-height: 20px;
+  height: 5vh;
+  background-color: var(--grayShade);;
+  cursor: pointer; 
+}
+
+/* Link to create page */
+#createLink{
+  /* width: 100%; */
+  margin: auto;
+  color:#000000
+}
+
+/* Dynamic text that displays log in failures */
+.loginFailures{
+  width: 20%;
+  margin: auto;
+  margin-top: 3vh;
+  text-align: center;
+  height: 5vh;
+  color: #FF0000;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* Begins wordle specific styling */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* Instructions for the game */
+#instructions{
+  background-color: #623f92;
+  width: 60vw;
+  height: auto;
+  margin-top: 3vh;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  
+}
+
+/* Text on the instructions pop up */
+.popUpText{
+  color: #FFFFFF;
+  text-align: center;
+  font-size:calc(1em + 1vw);
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+/* Close button on the instructions pop up */
+#popUpButton{
+  font-size:calc(.4em + 1.4vw);
+  width: 20%;
+  float:right;
+  cursor: pointer;
+  background-color: #111d89;
+}
+
+
+/* Alerts such as Loading... */
+#wordleAlerts{
+  text-align: center;
+  padding: 0;
+  font-size:calc(.2em + 1vw);
+  color: #FF0000;
+}
+
+/* Holds all of the content for the wordle page (tiles and keyboard) */
+#wordleContainer{
+  display: flex-box;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Holds the wordle tiles */
+#wordleContent{
+  width: 80vw;
+  height: 70vh;
+  min-height: 200px;
+  background-color: var(--grayShade);;
+  margin: auto;
+  text-align: center;
+  padding-top: 4.5vh;
+}
+
+/* The world tiles */
+.tile{
+  border:.1em solid #000000;
+  background-color: #2b343b;
+  color: #ffffff;
+  font-size:calc(1em + 1vh);
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+/* Holds the keyboard */
+#keyboardContainer{
+  height: 25vh;
+  min-height: 100px;
+  width: 80vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  background-color: #583a3a;
+}
+
+/* The rows of the keyboard */
+#keyRowDiv{
+  margin: auto;
+  width:80vw;
+  height: 90%;
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 1%;
+  
+}
+
+/* The individual keys of the keyboard */
+.key{
+  grid-template-areas: "upper";
+  background-color: #3d5780;
+  padding: 0;
+  margin: 0;
+  width: 7vw;
+  height: 100%;
+  display: inline-flex;
+  margin-bottom: 1%;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(.4em + 2vh);
+  border:.1em solid #000000;
+  cursor: pointer;
+}
+
+/* Leaderboard displays after the game ends */
+#leaderboard{
+  display: none;
+  word-wrap: break-all;
+  height: auto;
+  width: 80vw;
+  background-color: var(--grayShade);;
+  margin: auto;
+  text-align: center;
+}
+
+/* Individual scores in the leaderboard */
+.score_entry{
+  margin: 3%;
+  padding: 0;
+  
+}

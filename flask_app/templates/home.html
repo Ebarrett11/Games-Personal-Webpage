@@ -1,0 +1,31 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+<div class="mainContent">
+  <!-- left side -->
+  <div id="photo" class="bioPhotoDiv">
+    <img class="bioPhoto" src="static/main/images/emmett_photo_wide.jpg" alt="Photo of Emmett Barrett" loading="lazy">
+  </div>
+  <!-- right side -->
+  <div id="text" class="bioDiv">
+    <p class="bio">
+      Emmett Barrett is a computer science student at Michigan State University,
+      where he will be graduating in the spring of 2024. He enjoys programming, playing soccer, and watching movies. 
+      Emmett was born in Golden Colorado and moved to St. Louis Missouri when he was two years old. He lived there
+      for all of his life until he went off to college. At college, Emmett is a part of the Salsa Club,
+      he hangs out with his friends, and he goes to the gym.  
+    </p>
+    </div>
+    <!-- below the text and bio always centered-->
+  <div id="fact">
+    <hr>
+    <h1>A fun fact about me:</h1>
+    <p>I can tie my shoes with one hand</p>
+  </div>
+</div> 
+
+<script src="static\piano\js\hamburger.js"></script>
+
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+
+{% block maincontent %}
+<!-- https://www.geeksforgeeks.org/how-to-get-the-value-of-text-input-field-using-javascript/ -->
+<!-- Used for gettign information from input -->
+<br>
+<div class="inputDiv">
+  <!-- input fields for email and password -->
+  <input class = "loginInput" id = "email" type="text" title="Email" placeholder="Email"  />
+  <input class = "loginInput" id = "password" type="text" title="Password" placeholder="Password"  />
+  <br>
+  <button type="button" class = "loginButton" onclick="checkCredentials()">Sign In</button>
+  <br>
+  <h1 id="createLink"><a href="/create">Create an Account Here.</a></h1>
+  <!-- Dynamic log in failures updates -->
+  <p class = "loginFailures" id="failure"></p>
+</div>
+
+<script src="static\login\login.js"></script>
+<script src="static\piano\js\hamburger.js"></script>
+{% endblock %}
+
+<!-- @app.route('/login'):  Should render the login.html template. 
+  The HTML template should contain two inputs that capture the email and password of the user, 
+  as well as a button that submits the credentials for authentication to @app.route('/processlogin')  
+  using an asynchronous POST request via AJAX. If @app.route('/processlogin') 
+  indicates that the authentication was a failure this should be noted on the page; 
+  more specifically, your page must dynamically show how many times the authentication attempt has failed. 
+  If the authentication is a success, the user should be redirected to /home. -->

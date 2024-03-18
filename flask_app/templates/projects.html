@@ -1,0 +1,40 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+ 
+<div id="pageDesc">
+  <h1>Below is a list of project I worked on in CSE 477:</h1>
+  <h3>Click an image, or hyperlink in the description to learn more.</h2>
+  <hr>
+  </div>
+  <!-- Same as home.html -->
+<div class="mainContent">
+  <!-- left side in wide -->
+  <div id="photo" class="bioPhotoDiv">
+    <a href="/piano"><img class="bioPhoto" src="static\main\images\piano.jpeg" alt="Piano with with white background" loading="lazy"></a>
+  </div>
+  <!-- right side in wide-->
+  <div id="text" class="bioDiv">
+    <p class="bio">As part of my first Homework assignment in CSE477. I developed an interactive piano build in pure HTML, CSS, and Javascript. This tool (in addition to my webpage) highlight my ability to build beatufiul and mobile-friendly front-end applications. <a href="/piano">Click here to see and play!</a></p>
+  </div>
+  <!-- left side in wide -->
+  <div id="photo-lower" class="bioPhotoDiv">
+    <!-- image frrom https://www.dictionary.com/e/c/word-trends/current-events/page/8/ -->
+    <a href="/wordle"><img class="bioPhoto" src="static\main\images\wordle.png" alt="Wordle grid" loading="lazy"></a>
+  </div>
+  <!-- right side in wide-->
+  <div id="text-lower" class="bioDiv">
+    <p class="bio">Must be Logged in to play. I developed an interactive Wordle game using HTML, CSS, Javascript, SQL, and Socket.io.<a href="/wordle">Click here to see and play!</a></p>
+  </div>
+  <!-- Below photo and bio -->
+  <div id="fact">
+    <hr>
+    <h3>More coming soon!</h3>
+  </div>
+</div>  
+    
+
+<script src="static\piano\js\hamburger.js"></script>
+
+
+{% endblock %}

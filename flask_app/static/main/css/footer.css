@@ -1,0 +1,17 @@
+footer{
+  margin-top: 2em;
+  padding: 0;
+  height: auto;
+  position: relative;
+}
+
+/* Div for the footer always at the bottom of the page */
+.footer {
+  background-color: #d6d3cb;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  
+}
+

@@ -1,0 +1,82 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emmett Barrett's personal page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  <link rel="stylesheet" type="text/css" href="static\main\css\header.css">
+  <link rel="stylesheet" type="text/css" href="static\main\css\main.css">
+  <link rel="stylesheet" type="text/css" href="static\main\css\footer.css">
+  <link rel="stylesheet" type="text/css" href="static\main\css\navbar.css">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header>
+        <!-- header from https://www.rawpixel.com/search/light%20blue%20background?page=1&path=_topics&sort=curated -->
+        <img id ="headerImg" src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTU5NDg4NC1pbWFnZS1rd3Z4cnkzaC5qcGc.jpg" alt ="Blue and Pink " loading="lazy">
+    </header>
+    <!-- The navigation bar -->
+    <!-- Responsive nav with javascript from 
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav -->
+    <nav>
+      <div class="navBar" id="navBar">
+        <!-- left side of navbar desktop view-->
+        <div id="navBarTitle">
+            <!-- If user isn't known or is null, then display CSE 477
+            IF user is known, then display name -->
+            {% if user == 'Unknown' %}  
+            <p>CSE 477 - Final</p>
+            {% elif user == null %}  
+            <p>CSE 477 - Homework 3</p>
+            {% else %}
+            <p>Logged in as {{user}}</p>
+            {% endif %}
+            <br>
+            <a id = "hamburger"><img src="static\main\images\menu-bar.png" alt="hamburger icon" loading="lazy"></a>
+        </div>
+        <!-- right side of navbar desktop view -->
+        <a href="/home"><button>Home</button></a>
+        <a href="/chat"><button>Chat</button></a>
+        <a href="/projects"><button>Projects</button></a>
+        <!-- Dynamic log in log out  -->
+        {%if user == 'Unknown' %}
+        <a id ="logInOrOut" href="/login"><button id="logInOrOutButton">Login</button></a>
+        {%elif user == null %}
+        <a id ="logInOrOut" href="/login"><button id="logInOrOutButton">Login</button></a>
+        {% else %}
+        <a id ="logInOrOut" href="/logout"><button id="logInOrOutButton">Logout</button></a>
+        {% endif %}  
+      </div>
+    </nav>
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+    </article>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

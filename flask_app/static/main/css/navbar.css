@@ -1,0 +1,141 @@
+:root{
+  --navBarcolor: #363738;
+}
+nav{
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+.navBar {
+  height: 10vh;
+  width: 100%;
+  background-color: var(--navBarcolor);
+  margin: 0;
+  padding: 0;
+
+  display:  grid;
+  grid-template-columns: 6fr 1fr 1fr 1fr 1fr;
+  position: relative;
+  z-index: 9;
+} 
+
+/* vertical allign: 
+https://blog.hubspot.com/website/center-an-image-in-html */
+#navBarTitle{
+  display: flex;
+  align-items: center; 
+  height: 10vh; 
+  width: 100%;
+}
+
+/* The links on the navBar */
+.navBar a{
+  height: inherit;
+  width: inherit;
+}
+
+/* The text on the navBar */
+.navBar p {
+  color: #ffffff;
+  float: left;
+  padding: 2vw;
+}
+
+/* Buttons on the navbar */
+.navBar button{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: var(--navBarcolor);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* images on the navbar */
+.navBar img{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--navBarcolor);
+  cursor: pointer;
+  border: none;
+  object-fit: contain;
+}
+
+/* On hover change opacity to 50% */
+.navBar a:hover{
+  opacity: 50%;
+}
+
+
+
+/* initially hide hamburger button */
+#hamburger {
+  display: none;
+}
+
+/* On hover over hamburger icon change opacity of image */
+#hamburger:hover img{
+  opacity: 40%;
+}
+
+/* Initially hide linked in text (substitue for linked in logo in mobile mode) */
+#linkedInText {
+  display: none;
+}
+
+
+/* media queries at bottom to reduce errors */
+@media only screen and (max-width: 650px) {
+  /* Single column view */
+  .navBar{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  /* hide all but title and hamburger icn */
+  .navBar a:not(first-child) {
+    display: none;
+  }
+
+  /* Unhide hamburger icon */
+  .navBar > #navBarTitle >#hamburger {
+    margin-left: auto;
+    display: inline; 
+    width: auto;
+  }
+
+  /* hide linked in icon (replaced with text later) */
+  .navBar > a > #linkedInImg{
+    display: none;
+  }
+  
+}
+
+@media only screen and (max-width: 650px){
+  /* Linked in text (replaces img) */
+  .navBar.show #linkedInText{
+    display: block;
+  }
+  
+  /* unhides links in mobile view */
+  .navBar.show a{
+    display: block;
+  }
+
+  /* changes background to black */
+  .navBar a:hover button{
+  background-color: #000000;
+}
+
+  /* makes link visible */
+  .navBar a:hover{
+    opacity: 100%;
+  }
+}
